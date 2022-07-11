@@ -1704,7 +1704,7 @@ function qwqdraw1(now) {
 	ctxos.font = `${lineScale * 0.63}px NoirPro`;
 	const dxlvl = ctxos.measureText(inputLevel.value || inputLevel.placeholder).width;
 	if (dxlvl > wlen - lineScale) ctxos.font = `${(lineScale) * 0.63/dxlvl*(wlen - lineScale )}px NoirPro`;
-	ctxos.fillText(inputLevel.value || inputLevel.placeholder, canvasos.width - lineScale * 0.75, canvasos.height - lineScale * 0.66);
+	ctxos.fillText(stat.accStr, canvasos.width - lineScale * 0.75, canvasos.height - lineScale * 0.66);
 	ctxos.drawImage(res["SongsNameBar"], lineScale * 0.53, canvasos.height - lineScale * 1.22, lineScale * 0.119, lineScale * 0.612);
 	ctxos.textAlign = "left";
 	ctxos.font = `${lineScale * 0.63}px NoirPro`;
