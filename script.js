@@ -1436,7 +1436,7 @@ function loop() {
 	ctx.globalAlpha = 1;
 	ctx.drawImage(canvasos, (canvas.width - canvasos.width) / 2, 0);
 	//Copyright
-	ctx.font = `${lineScale * 0.3}px Mina`;
+	ctx.font = `${lineScale * 0.3}px NoirPro`;
 	ctx.fillStyle = "#ccc";
 	ctx.globalAlpha = 0.5;
 	ctx.textAlign = "right";
@@ -1557,7 +1557,7 @@ function qwqdraw1(now) {
 			const tick = (now - i.time) / i.duration;
 			ctxos.setTransform(...imgFlip(1, 0, 0, 1, i.offsetX, i.offsetY)); //缩放
 			if (selectflip.value[0] == "t") ctxos.transform(-1, 0, 0, -1, 0, 0); //qwq
-			ctxos.font = `bold ${noteScale*(256+128* (((0.2078 * tick - 1.6524) * tick + 1.6399) * tick + 0.4988))}px Mina`;
+			ctxos.font = `bold ${noteScale*(256+128* (((0.2078 * tick - 1.6524) * tick + 1.6399) * tick + 0.4988))}px NoirPro`;
 			ctxos.textAlign = "center";
 			ctxos.textBaseline = "middle";
 			ctxos.fillStyle = i.color;
@@ -1592,7 +1592,7 @@ function qwqdraw1(now) {
 	}
 	if (qwqIn.second >= 3 && qwqOut.second == 0) {
 		if (showPoint.checked) { //绘制定位点
-			ctxos.font = `${lineScale}px Mina`;
+			ctxos.font = `${lineScale}px NoirPro`;
 			ctxos.textAlign = "center";
 			ctxos.textBaseline = "bottom";
 			for (const i of Renderer.notes) {
@@ -1654,19 +1654,19 @@ function qwqdraw1(now) {
 		ctxos.textAlign = "center";
 		//歌名
 		ctxos.textBaseline = "alphabetic";
-		ctxos.font = `${lineScale * 1.1}px Mina`;
+		ctxos.font = `${lineScale * 1.1}px NoirPro`;
 		const dxsnm = ctxos.measureText(inputName.value || inputName.placeholder).width;
-		if (dxsnm > canvasos.width - lineScale * 1.5) ctxos.font = `${(lineScale) * 1.1/dxsnm*(canvasos.width-lineScale*1.5)}px Mina`;
+		if (dxsnm > canvasos.width - lineScale * 1.5) ctxos.font = `${(lineScale) * 1.1/dxsnm*(canvasos.width-lineScale*1.5)}px NoirPro`;
 		ctxos.fillText(inputName.value || inputName.placeholder, wlen, hlen * 0.75);
 		//曲绘和谱师
 		ctxos.textBaseline = "top";
-		ctxos.font = `${lineScale * 0.55}px Mina`;
+		ctxos.font = `${lineScale * 0.55}px NoirPro`;
 		const dxi = ctxos.measureText(`Illustration designed by ${inputIllustrator.value || inputIllustrator.placeholder}`).width;
-		if (dxi > canvasos.width - lineScale * 1.5) ctxos.font = `${(lineScale) * 0.55/dxi*(canvasos.width-lineScale*1.5)}px Mina`;
+		if (dxi > canvasos.width - lineScale * 1.5) ctxos.font = `${(lineScale) * 0.55/dxi*(canvasos.width-lineScale*1.5)}px NoirPro`;
 		ctxos.fillText(`Illustration designed by ${inputIllustrator.value || inputIllustrator.placeholder}`, wlen, hlen * 1.25 + lineScale * 0.15);
-		ctxos.font = `${lineScale * 0.55}px Mina`;
+		ctxos.font = `${lineScale * 0.55}px NoirPro`;
 		const dxc = ctxos.measureText(`Level designed by ${inputDesigner.value || inputDesigner.placeholder}`).width;
-		if (dxc > canvasos.width - lineScale * 1.5) ctxos.font = `${(lineScale) * 0.55/dxc*(canvasos.width-lineScale*1.5)}px Mina`;
+		if (dxc > canvasos.width - lineScale * 1.5) ctxos.font = `${(lineScale) * 0.55/dxc*(canvasos.width-lineScale*1.5)}px NoirPro`;
 		ctxos.fillText(`Level designed by ${inputDesigner.value || inputDesigner.placeholder}`, wlen, hlen * 1.25 + lineScale * 1.0);
 		//判定线(装饰用)
 		ctxos.globalAlpha = 1;
@@ -1680,17 +1680,17 @@ function qwqdraw1(now) {
 	ctxos.globalAlpha = 1;
 	ctxos.setTransform(1, 0, 0, 1, 0, lineScale * (qwqIn.second < 0.67 ? (tween[2](qwqIn.second * 1.5) - 1) : -tween[2](qwqOut.second * 1.5)) * 1.75);
 	ctxos.textBaseline = "alphabetic";
-	ctxos.font = `${lineScale * 0.75}px Mina`;//分数大小
+	ctxos.font = `${lineScale * 0.75}px NoirPro`;//分数大小
 	ctxos.textAlign = "right";
 	ctxos.fillText(stat.scoreStr, canvasos.width - lineScale * 13.3, lineScale * 0.75);//分数位置
 	if (1>0) ctxos.drawImage(res["Pause"], lineScale * 0.6, lineScale * 0.7, lineScale * 0.63, lineScale * 0.7);
 	if (stat.combo > -1) {
 		ctxos.fillStyle = "#17d1f4";
 		ctxos.textAlign = "center";
-		ctxos.font = `${lineScale * 0.7}px Mina`;
+		ctxos.font = `${lineScale * 0.7}px NoirPro`;
 		ctxos.fillText(stat.combo, wlen, lineScale * 1.6);//combo位置
 		ctxos.globalAlpha = qwqIn.second < 0.67 ? tween[2](qwqIn.second * 1.5) : (1 - tween[2](qwqOut.second * 1.5));
-		ctxos.font = `${lineScale * 0.36}px Mina`;
+		ctxos.font = `${lineScale * 0.36}px NoirPro`;
 		ctxos.fillStyle = "#fff";
 		ctxos.fillText(autoplay.checked ? "Autoplay" : "combo", wlen, lineScale * 2);
 	}
@@ -1701,15 +1701,15 @@ function qwqdraw1(now) {
 	ctxos.setTransform(1, 0, 0, 1, 0, lineScale * (qwqIn.second < 0.67 ? (1 - tween[2](qwqIn.second * 1.5)) : tween[2](qwqOut.second * 1.5)) * 1.75);
 	ctxos.textBaseline = "alphabetic";
 	ctxos.textAlign = "right";
-	ctxos.font = `${lineScale * 0.63}px Mina`;
+	ctxos.font = `${lineScale * 0.63}px NoirPro`;
 	const dxlvl = ctxos.measureText(inputLevel.value || inputLevel.placeholder).width;
-	if (dxlvl > wlen - lineScale) ctxos.font = `${(lineScale) * 0.63/dxlvl*(wlen - lineScale )}px Mina`;
+	if (dxlvl > wlen - lineScale) ctxos.font = `${(lineScale) * 0.63/dxlvl*(wlen - lineScale )}px NoirPro`;
 	ctxos.fillText(inputLevel.value || inputLevel.placeholder, canvasos.width - lineScale * 0.75, canvasos.height - lineScale * 0.66);
 	ctxos.drawImage(res["SongsNameBar"], lineScale * 0.53, canvasos.height - lineScale * 1.22, lineScale * 0.119, lineScale * 0.612);
 	ctxos.textAlign = "left";
-	ctxos.font = `${lineScale * 0.63}px Mina`;
+	ctxos.font = `${lineScale * 0.63}px NoirPro`;
 	const dxsnm = ctxos.measureText(inputName.value || inputName.placeholder).width;
-	if (dxsnm > wlen - lineScale) ctxos.font = `${(lineScale) * 0.63/dxsnm*(wlen - lineScale )}px Mina`;
+	if (dxsnm > wlen - lineScale) ctxos.font = `${(lineScale) * 0.63/dxsnm*(wlen - lineScale )}px NoirPro`;
 	ctxos.fillText(inputName.value || inputName.placeholder, lineScale * 0.85, canvasos.height - lineScale * 0.66);
 	ctxos.resetTransform();
 	if (qwq[0]) {
@@ -1717,7 +1717,7 @@ function qwqdraw1(now) {
 		if (qwqIn.second < 0.67) ctxos.globalAlpha = tween[2](qwqIn.second * 1.5);
 		else ctxos.globalAlpha = 1 - tween[2](qwqOut.second * 1.5);
 		ctxos.textBaseline = "middle";
-		ctxos.font = `${lineScale * 0.4}px Mina`;
+		ctxos.font = `${lineScale * 0.4}px NoirPro`;
 		ctxos.textAlign = "left";
 		ctxos.textAlign = "right";
 		ctxos.textBaseline = "alphabetic";
@@ -1806,15 +1806,15 @@ function qwqdraw3(statData) {
 	ctxos.fillStyle = "#fff";
 	ctxos.textBaseline = "middle";
 	ctxos.textAlign = "left";
-	ctxos.font = "0px Mina";
+	ctxos.font = "0px NoirPro";
 	const dxsnm = ctxos.measureText(inputName.value || inputName.placeholder).width;
-	if (dxsnm > 1500) ctxos.font = `0px Mina`;
+	if (dxsnm > 1500) ctxos.font = `0px NoirPro`;
 	ctxos.fillText(inputName.value || inputName.placeholder, 700 * tween[8](range(qwqEnd.second * 1.25)) - 320, 145);
-	ctxos.font = "0px Mina";
+	ctxos.font = "0px NoirPro";
 	const dxlvl = ctxos.measureText(inputLevel.value || inputLevel.placeholder).width;
-	if (dxlvl > 750) ctxos.font = `0px Mina`;
+	if (dxlvl > 750) ctxos.font = `0px NoirPro`;
 	ctxos.fillText(inputLevel.value || inputLevel.placeholder, 700 * tween[8](range(qwqEnd.second * 1.25)) - 317, 208);
-	ctxos.font = "0px Mina";
+	ctxos.font = "0px NoirPro";
 	//Rank图标
 	ctxos.globalAlpha = range((qwqEnd.second - 1.87) * 3.75);
 	const qwq2 = 293 + range((qwqEnd.second - 1.87) * 3.75) * 120;
@@ -1833,7 +1833,7 @@ function qwqdraw3(statData) {
 	ctxos.globalAlpha = range((qwqEnd.second - 0.95) * 1.50);
 	ctxos.textAlign = "left";
 	ctxos.fillStyle = "#17d1f4";
-	ctxos.font = "50px Mina";
+	ctxos.font = "50px NoirPro";
 	ctxos.fillText(stat.accStr, 752, 1000);//acc位置
 	ctxos.fillText(stat.maxcombo, 980, 1000);//最大combo位置
 	ctxos.fillStyle = statData.textAboveColor;
@@ -1842,10 +1842,10 @@ function qwqdraw3(statData) {
 	ctxos.fillText(statData.textBelowStr, 1355, 590);
 	ctxos.fillStyle = "#fff";
 	ctxos.textAlign = "center";
-	ctxos.font = "110px Mina";
+	ctxos.font = "110px NoirPro";
 	ctxos.globalAlpha = range((qwqEnd.second - 1.12) * 2.00);
 	ctxos.fillText(stat.scoreStr, 955, 454);//分数位置
-	ctxos.font = "60px Mina";
+	ctxos.font = "60px NoirPro";
 	ctxos.globalAlpha = range((qwqEnd.second - 0.87) * 2.50);//perfect
 	ctxos.fillText(stat.perfect, 540, 610);
 	ctxos.globalAlpha = range((qwqEnd.second - 1.07) * 2.50);//good
@@ -1854,7 +1854,7 @@ function qwqdraw3(statData) {
 	ctxos.fillText(stat.noteRank[6], 1050, 610);
 	ctxos.globalAlpha = range((qwqEnd.second - 1.47) * 2.50);//miss
 	ctxos.fillText(stat.noteRank[2], 1370, 610);
-	ctxos.font = "22px Mina";
+	ctxos.font = "22px NoirPro";
 	const qwq4 = range((qwq[3] > 0 ? qwqEnd.second - qwq[3] : 0.2 - qwqEnd.second - qwq[3]) * 5.00);
 	ctxos.globalAlpha = 0.8 * range((qwqEnd.second - 0.87) * 2.50) * qwq4;
 	ctxos.fillStyle = "#696";
