@@ -2,8 +2,8 @@
 const _i = ['Phigros模拟器', [1, 4, 16], 1611795955, 1651419173];
 const urls = {
 	zip: ["zip.min.js", "zip.min.js"],
-	browser: ["//fastly.jsdelivr.net/gh/mumuy/browser/Browser.js", "//fastly.jsdelivr.net/gh/mumuy/browser/Browser.js", "//passer-by.com/browser/Browser.js"],
-	bitmap: ["//cdn.jsdelivr.net/gh/Kaiido/createImageBitmap/dist/createImageBitmap.js", "//fastly.jsdelivr.net/gh/Kaiido/createImageBitmap/dist/createImageBitmap.js"],
+	browser: ["Browser.js", "Browser.js", "Browser.js"],
+	bitmap: ["createImageBitmap.js", "createImageBitmap.js"],
 	blur: ["stackblur-canvas.js", "stackblur-canvas.js"],
 	md5: ["md5-js.js", "md5-js.js"],
 }
